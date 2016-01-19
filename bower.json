@@ -1,9 +1,8 @@
 {
   "name": "file-reader",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "LICENSE.txt",
   "description": "A file reader element.",
-  "private": true,
   "authors": [
     "Pawel Psztyc",
     "Advanced REST client team"
