@@ -1,3 +1,5 @@
+'use strict';
+/* global Blob, FileReader */
 Polymer({
   is: 'file-reader',
   /**

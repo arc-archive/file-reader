@@ -1,5 +1,5 @@
 {
-  "private": true,
+  "private": false,
   "devDependencies": {
     "gulp": "^3.8.5",
     "web-component-tester": "^4.0.0"
