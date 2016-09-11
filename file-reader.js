@@ -1,6 +1,7 @@
+/* global Blob, FileReader */
+
 (function() {
   'use strict';
-  /* global Blob, FileReader */
   Polymer({
     is: 'file-reader',
     /**
