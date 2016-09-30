@@ -1,4 +1,3 @@
 {
-  "analytics": true,
-  "directory": "../bower_components/"
+  "analytics": true
 }
