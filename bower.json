@@ -1,8 +1,8 @@
 {
   "name": "file-reader",
   "version": "1.0.3",
-  "license": "LICENSE.txt",
-  "description": "A file reader element.",
+  "license": "Apache-2.0 OR CC-BY-4.0",
+  "description": "An element that reads files.",
   "authors": [
     "Pawel Psztyc",
     "Advanced REST client team"
@@ -10,7 +10,10 @@
   "keywords": [
     "web-components",
     "polymer",
-    "files"
+    "file",
+    "file reader",
+    "filesystem",
+    "web filesystem"
   ],
   "repository": {
     "type": "git",
@@ -27,5 +30,5 @@
     "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
   },
   "main": "file-reader.html",
-  "ignore": []
+  "ignore": ["**/.*", "node_modules", "bower_components", "test", "tasks"],
 }

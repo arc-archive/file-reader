@@ -1,13 +1,29 @@
 {
+  "name": "file-reader",
+  "version": "1.0.3",
+  "license": "Apache-2.0 OR CC-BY-4.0",
   "private": false,
   "devDependencies": {
-    "gulp": "^3.8.5",
-    "web-component-tester": "^4.0.0"
+    "polymer-cli": "^0.17.0"
   },
+  "main": ["file-reader.html"],
   "scripts": {
-    "test": "gulp test:local"
+    "serve": "node_modules/.bin/polymer serve",
+    "lint": "node_modules/.bin/polymer lint file-reader.html",
+    "test-sauce": "node_modules/.bin/polymer test --plugin sauce --job-name \"file-reader:local-test\"",
+    "test": "node_modules/.bin/polymer test",
+    "deps": "npm install --quiet && bower install --quiet",
+    "update-deps": "npm update --quiet && bower update --quiet"
   },
   "engines": {
     "node": ">=0.10.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/advanced-rest-client/file-reader.git"
+  },
+  "bugs": {
+    "url": "https://github.com/advanced-rest-client/file-reader/issues",
+    "email": "arc@mulesoft.com"
   }
 }
