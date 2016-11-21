@@ -14,8 +14,9 @@
   "undef": true,
   "unused": true,
   "newcap": false,
+  "mocha": "TDD",
   "globals": {
     "FileBehaviors": true,
-    "chrome": true
+    "Polymer": true
   }
 }
