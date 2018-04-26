@@ -1,13 +1,29 @@
 {
+  "name": "@arc-components/file-reader",
+  "description": "An element that reads files.",
+  "version": "2.0.0-preview",
+  "license": "Apache-2.0",
+  "main": "file-reader.html",
+  "authors": [
+    "Pawel Psztyc",
+    "The Advanced REST client authors <arc@mulesoft.com>"
+  ],
   "private": false,
   "devDependencies": {
-    "gulp": "^3.8.5",
-    "web-component-tester": "^4.0.0"
+    "@polymer/gen-typescript-declarations": "^1.1.1"
   },
   "scripts": {
-    "test": "gulp test:local"
+    "test": "polymer test --plugin local",
+    "lint": "polymer lint file-reader.html",
+    "test-sauce": "polymer test --plugin sauce --job-name \"file-reader:local-test\"",
+    "update-types": "gen-typescript-declarations --deleteExisting --outDir ."
   },
-  "engines": {
-    "node": ">=0.10.0"
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/advanced-rest-client/file-reader.git"
+  },
+  "bugs": {
+    "url": "https://github.com/advanced-rest-client/file-reader/issues",
+    "email": "arc@mulesoft.com"
   }
 }
