@@ -1,7 +1,7 @@
 {
   "name": "file-reader",
   "description": "An element that reads files.",
-  "version": "2.0.0-preview",
+  "version": "2.0.0",
   "license": "Apache-2.0",
   "authors": [
     "Pawel Psztyc",
