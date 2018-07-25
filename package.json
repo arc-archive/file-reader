@@ -1,22 +1,23 @@
 {
-  "name": "file-reader",
-  "version": "1.0.3",
-  "license": "Apache-2.0 OR CC-BY-4.0",
+  "name": "@advanced-rest-client/file-reader",
+  "description": "An element that reads files.",
+  "version": "2.0.0",
+  "license": "Apache-2.0",
+  "main": "file-reader.html",
+  "authors": [
+    "Pawel Psztyc",
+    "The Advanced REST client authors <arc@mulesoft.com>"
+  ],
   "private": false,
   "devDependencies": {
-    "polymer-cli": "^0.17.0"
+    "@polymer/gen-typescript-declarations": "^1.1.1"
   },
   "main": ["file-reader.html"],
   "scripts": {
-    "serve": "node_modules/.bin/polymer serve",
-    "lint": "node_modules/.bin/polymer lint file-reader.html",
-    "test-sauce": "node_modules/.bin/polymer test --plugin sauce --job-name \"file-reader:local-test\"",
-    "test": "node_modules/.bin/polymer test",
-    "deps": "npm install --quiet && bower install --quiet",
-    "update-deps": "npm update --quiet && bower update --quiet"
-  },
-  "engines": {
-    "node": ">=0.10.0"
+    "test": "polymer test --plugin local",
+    "lint": "polymer lint file-reader.html",
+    "test-sauce": "polymer test --plugin sauce --job-name \"file-reader:local-test\"",
+    "update-types": "gen-typescript-declarations --deleteExisting --outDir ."
   },
   "repository": {
     "type": "git",
