@@ -3,16 +3,17 @@
   "description": "An element that reads files.",
   "version": "2.0.0",
   "license": "Apache-2.0",
-  "main": "file-reader.html",
+  "main": [
+    "file-reader.html"
+  ],
   "authors": [
     "Pawel Psztyc",
     "The Advanced REST client authors <arc@mulesoft.com>"
   ],
   "private": false,
   "devDependencies": {
-    "@polymer/gen-typescript-declarations": "^1.1.1"
+    "@polymer/gen-typescript-declarations": "^1.6.1"
   },
-  "main": ["file-reader.html"],
   "scripts": {
     "test": "polymer test --plugin local",
     "lint": "polymer lint file-reader.html",
