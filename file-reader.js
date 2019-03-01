@@ -1,5 +1,4 @@
-<link rel="import" href="../polymer/polymer-element.html">
-<script>
+import {PolymerElement} from '@polymer/polymer/polymer-element.js';
 /**
  * `file-reader`
  *
@@ -18,8 +17,7 @@
  * @polymer
  * @memberof LogicElements
  */
-class FileReaderComponent extends Polymer.Element {
-  static get is() { return 'file-reader'; }
+class FileReaderComponent extends PolymerElement {
   static get properties() {
     return {
       /**
@@ -93,7 +91,7 @@ class FileReaderComponent extends Polymer.Element {
     };
   }
 
-  static get observers(){
+  static get observers() {
     return [
       '_autoChanged(auto, blob, readAs)'
     ];
@@ -110,6 +108,8 @@ class FileReaderComponent extends Polymer.Element {
   /**
    * Supports auto read function.
    * Called when one of `auto`, `blob` or `readAs` change and when all of them are set.
+   * @param {Boolean} auto
+   * @param {Blob} blob
    */
   _autoChanged(auto, blob) {
     if (!auto || !blob) {
@@ -154,7 +154,10 @@ class FileReaderComponent extends Polymer.Element {
     }
     this._reader = reader;
   }
-  /** Error event handler */
+  /**
+   * Error event handler
+   * @param {Event} e
+   */
   _readError(e) {
     this._setError(true);
     this._setLoading(false);
@@ -165,7 +168,10 @@ class FileReaderComponent extends Polymer.Element {
       }
     }));
   }
-  /** Load event handler */
+  /**
+   * Load event handler
+   * @param {Event} e
+   */
   _readResult(e) {
     this._setLoaded(true);
     this._setLoading(false);
@@ -181,7 +187,10 @@ class FileReaderComponent extends Polymer.Element {
     this._setLoaded(false);
     this.dispatchEvent(new CustomEvent('file-abort'));
   }
-  /** Progress event handler. */
+  /**
+   * Progress event handler.
+   * @param {Event} e
+   */
   _readProgress(e) {
     if (e.lengthComputable) {
       let percentComplete = e.loaded / e.total;
@@ -218,5 +227,4 @@ class FileReaderComponent extends Polymer.Element {
    * @param {String|ArrayBuffer} result A string or an ArrayBuffer which depends on `readAs`.
    */
 }
-window.customElements.define(FileReaderComponent.is, FileReaderComponent);
-</script>
+window.customElements.define('file-reader', FileReaderComponent);

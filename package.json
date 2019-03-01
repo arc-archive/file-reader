@@ -12,7 +12,12 @@
   ],
   "private": false,
   "devDependencies": {
-    "@polymer/gen-typescript-declarations": "^1.6.1"
+    "@polymer/gen-typescript-declarations": "^1.6.1",
+    "@polymer/test-fixture": "^4.0.2",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "sinon": "^7.2.3",
+    "wct-mocha": "^1.0.0"
   },
   "scripts": {
     "test": "polymer test --plugin local",
@@ -27,5 +32,8 @@
   "bugs": {
     "url": "https://github.com/advanced-rest-client/file-reader/issues",
     "email": "arc@mulesoft.com"
+  },
+  "dependencies": {
+    "@polymer/polymer": "^3.1.0"
   }
 }

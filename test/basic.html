@@ -21,11 +21,14 @@ the License.
   <meta charset="UTF-8">
   <title>file-reader tests</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-  <script src="../bower_components/webcomponentsjs/webcomponents.min.js"></script>
-  <script src="../bower_components/web-component-tester/browser.js"></script>
-  <link rel="import" href="../file-reader.html">
-</head>
 
+  <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+  <script src="../node_modules/@polymer/test-fixture/test-fixture.js"></script>
+  <script src="../node_modules/mocha/mocha.js"></script>
+  <script src="../node_modules/chai/chai.js"></script>
+  <script src="../node_modules/wct-mocha/wct-mocha.js"></script>
+
+</head>
 <body>
 
   <test-fixture id="basic">
@@ -34,26 +37,25 @@ the License.
     </template>
   </test-fixture>
 
-  <script>
-  /* global fixture, expect, should */
+  <script type="module">
+  import '../file-reader.js';
   suite('basic', function() {
-    var reader;
-
+    let reader;
     setup(function() {
       reader = fixture('basic');
     });
 
     test('file-reader reads the file', function(done) {
-      var debug = JSON.stringify({
+      const debug = JSON.stringify({
         hello: 'world'
       }, null, 2);
-      var blob = new Blob([debug], {
+      const blob = new Blob([debug], {
         type: 'application/json'
       });
       reader.blob = blob;
       reader.readAs = 'text';
       reader.addEventListener('file-read', function(e) {
-        var result = e.detail.result;
+        const result = e.detail.result;
         expect(result).to.be.a('string');
         expect(result).to.equal(debug);
         done();
@@ -64,17 +66,17 @@ the License.
       reader.read();
     });
     test('file-reader reads the file automatically', function(done) {
-      var debug = JSON.stringify({
+      const debug = JSON.stringify({
         hello: 'world'
       }, null, 2);
-      var blob = new Blob([debug], {
+      const blob = new Blob([debug], {
         type: 'application/json'
       });
       reader.blob = blob;
       reader.readAs = 'text';
       reader.auto = true;
       reader.addEventListener('file-read', function(e) {
-        var result = e.detail.result;
+        const result = e.detail.result;
         expect(result).to.be.a('string');
         expect(result).to.equal(debug);
         done();
@@ -82,7 +84,6 @@ the License.
       reader.addEventListener('file-error', function(e) {
         should.not.exist(e);
       });
-
     });
   });
   </script>
