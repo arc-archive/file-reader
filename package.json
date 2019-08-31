@@ -3,9 +3,7 @@
   "description": "An element that reads files.",
   "version": "3.0.0",
   "license": "Apache-2.0",
-  "main": [
-    "file-reader.html"
-  ],
+  "main": "file-reader.js",
   "keywords": [
     "advanced-rest-client",
     "files",
