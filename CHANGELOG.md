@@ -51,3 +51,12 @@
 
 
 
+# [3.0.0](https://github.com/advanced-rest-client/file-reader/compare/1.0.3...3.0.0) (2019-08-31)
+
+
+### Bug Fixes
+
+* fixing "main" entry in the package file ([8ff4083](https://github.com/advanced-rest-client/file-reader/commit/8ff4083))
+
+
+
