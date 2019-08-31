@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/advanced-rest-client/api-url-data-model.svg?branch=stage)](https://travis-ci.org/advanced-rest-client/file-reader)
+[![Build Status](https://travis-ci.org/advanced-rest-client/file-reader.svg?branch=stage)](https://travis-ci.org/advanced-rest-client/file-reader)
 [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/advanced-rest-client/file-reader)
 [![Published on NPM](https://img.shields.io/npm/v/@advanced-rest-client/file-reader.svg)](https://www.npmjs.com/package/@advanced-rest-client/file-reader)
 
