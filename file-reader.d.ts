@@ -10,8 +10,9 @@
 
 
 // tslint:disable:variable-name Describing an API that's defined elsewhere.
+// tslint:disable:no-any describes the API as best we are able today
 
-import {PolymerElement} from '@polymer/polymer/polymer-element.js';
+import {LitElement} from 'lit-element';
 
 declare namespace LogicElements {
 
@@ -26,10 +27,31 @@ declare namespace LogicElements {
    * Example:
    *
    * ```html
-   * <file-reader blob="[[myFile]]" readAs="dataURL" on-file-read="myFileAsURL" auto></file-reader>
-   * ```
+   * <file-reader
+   *  .blob="${this.myFile}"
+   *  readAs="dataURL"
    */
-  class FileReaderComponent extends PolymerElement {
+  class FileReaderComponent extends LitElement {
+    readonly loaded: Boolean|null;
+    _loaded: any;
+    readonly loading: Boolean|null;
+    _loading: any;
+    readonly error: Boolean|null;
+    _error: any;
+
+    /**
+     * This is set only if the browser is able to determine length of the file.
+     * The value is in range from 0 to 1.
+     */
+    readonly progress: Number|null;
+    _progress: any;
+
+    /**
+     * Sets how the input data should be read.
+     * Result format depends on this setting.
+     * Possible values are: `array-buffer`, `data-url`, `text`.
+     */
+    readAs: string|null|undefined;
 
     /**
      * A Blob to read. File object (the one you can get from the `<input type="file">`)
@@ -42,35 +64,12 @@ declare namespace LogicElements {
      * If the value of this attribute is `false` you need to call `read()` manually.
      */
     auto: boolean|null|undefined;
-
-    /**
-     * Sets how the input data should be read.
-     * Result format depends on this setting.
-     * Possible values are: `arrayBuffer`, `binaryString`, `dataURL`, `text`.
-     */
-    readAs: string|null|undefined;
-
-    /**
-     * Read-only value that is true when the data is read.
-     */
-    readonly loaded: boolean|null|undefined;
-
-    /**
-     * Read-only value that tracks the loading state of the data.
-     */
-    readonly loading: boolean|null|undefined;
-
-    /**
-     * Read-only value that indicates that the last set `blob` failed to load.
-     */
-    readonly error: boolean|null|undefined;
-
-    /**
-     * Current progress of file read.
-     * This is set only if the browser is able to determine length of the file.
-     * The value is in range from 0 to 1.
-     */
-    readonly progress: number|null|undefined;
+    onprogress: Function|null;
+    onerror: Function|null;
+    onloading: Function|null;
+    onloaded: Function|null;
+    onread: Function|null;
+    onabort: Function|null;
 
     /**
      * A file encoding. Used when reading file as text.
@@ -82,12 +81,23 @@ declare namespace LogicElements {
      * Current reader.
      */
     _reader: FileReader|null|undefined;
+    constructor();
+    connectedCallback(): void;
+    disconnectedCallback(): void;
+
+    /**
+     * Registers an event handler for given type
+     *
+     * @param eventType Event type (name)
+     * @param value The handler to register
+     */
+    _registerCallback(eventType: String|null, value: Function|null): void;
 
     /**
      * Supports auto read function.
      * Called when one of `auto`, `blob` or `readAs` change and when all of them are set.
      */
-    _autoChanged(auto: Boolean|null, blob: Blob|null): void;
+    _autoChanged(): void;
 
     /**
      * Read the blob.
@@ -102,7 +112,7 @@ declare namespace LogicElements {
     /**
      * Error event handler
      */
-    _readError(e: Event|null): void;
+    _readError(): void;
 
     /**
      * Load event handler
