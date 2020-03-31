@@ -24,25 +24,24 @@
     "email": "arc@mulesoft.com"
   },
   "dependencies": {
-    "lit-element": "^2.0.1"
+    "lit-element": "^2.3.1"
   },
   "devDependencies": {
-    "@advanced-rest-client/eslint-config": "^1.1.1",
+    "@advanced-rest-client/eslint-config": "^1.1.5",
     "@advanced-rest-client/prettier-config": "^0.1.0",
-    "@advanced-rest-client/testing-karma-sl": "^1.0.3",
-    "@api-components/api-model-generator": "^0.1.13",
-    "@commitlint/cli": "^8.1.0",
-    "@commitlint/config-conventional": "^7.0.0",
-    "@open-wc/testing": "^2.2.8",
-    "@open-wc/testing-karma": "^3.1.28",
+    "@advanced-rest-client/testing-karma-sl": "^1.2.0",
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "@open-wc/testing": "^2.5.8",
+    "@open-wc/testing-karma": "^3.3.10",
     "@polymer/gen-typescript-declarations": "^1.6.2",
     "@polymer/iron-test-helpers": "^3.0.1",
-    "deepmerge": "^4.0.0",
-    "es-dev-server": "^1.15.3",
-    "husky": "^1.0.0",
-    "karma": "^4.2.0",
-    "lint-staged": "^9.2.5",
-    "sinon": "^7.4.1"
+    "deepmerge": "^4.2.2",
+    "es-dev-server": "^1.46.0",
+    "husky": "^4.2.3",
+    "karma": "^4.4.1",
+    "lint-staged": "^10.1.1",
+    "sinon": "^9.0.1"
   },
   "scripts": {
     "update-types": "gen-typescript-declarations --deleteExisting --outDir .",
@@ -56,14 +55,11 @@
     "test:watch": "karma start --auto-watch=true --single-run=false",
     "test:update-snapshots": "karma start --update-snapshots",
     "test:prune-snapshots": "karma start --prune-snapshots",
-    "test:compatibility": "karma start --compatibility all --coverage",
-    "test:compatibility:watch": "karma start --compatibility all --auto-watch=true --single-run=false",
-    "test:sl": "karma start karma.sl.config.js --compatibility all --coverage"
+    "test:sl": "karma start karma.sl.config.js --coverage"
   },
   "lint-staged": {
     "*.js": [
-      "eslint --fix",
-      "git add"
+      "eslint --fix"
     ]
   }
 }
