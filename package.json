@@ -25,41 +25,5 @@
   },
   "dependencies": {
     "lit-element": "^2.3.1"
-  },
-  "devDependencies": {
-    "@advanced-rest-client/eslint-config": "^1.1.5",
-    "@advanced-rest-client/prettier-config": "^0.1.0",
-    "@advanced-rest-client/testing-karma-sl": "^1.2.0",
-    "@commitlint/cli": "^8.3.5",
-    "@commitlint/config-conventional": "^8.3.4",
-    "@open-wc/testing": "^2.5.8",
-    "@open-wc/testing-karma": "^3.3.10",
-    "@polymer/gen-typescript-declarations": "^1.6.2",
-    "@polymer/iron-test-helpers": "^3.0.1",
-    "deepmerge": "^4.2.2",
-    "es-dev-server": "^1.46.0",
-    "husky": "^4.2.3",
-    "karma": "^4.4.1",
-    "lint-staged": "^10.1.1",
-    "sinon": "^9.0.1"
-  },
-  "scripts": {
-    "update-types": "gen-typescript-declarations --deleteExisting --outDir .",
-    "lint:eslint": "eslint --ext .js,.html . --ignore-path .gitignore",
-    "format:eslint": "eslint --ext .js,.html . --fix --ignore-path .gitignore",
-    "lint:prettier": "prettier \"**/*.js\" --check --ignore-path .gitignore",
-    "format:prettier": "prettier \"**/*.js\" --write --ignore-path .gitignore",
-    "lint": "npm run lint:eslint && npm run lint:prettier",
-    "format": "npm run format:eslint && npm run format:prettier",
-    "test": "karma start --coverage",
-    "test:watch": "karma start --auto-watch=true --single-run=false",
-    "test:update-snapshots": "karma start --update-snapshots",
-    "test:prune-snapshots": "karma start --prune-snapshots",
-    "test:sl": "karma start karma.sl.config.js --coverage"
-  },
-  "lint-staged": {
-    "*.js": [
-      "eslint --fix"
-    ]
   }
 }
